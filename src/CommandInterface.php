@@ -41,5 +41,5 @@ abstract class CommandInterface
     /**
      * @return mixed
      */
-    abstract public function execute();
+    abstract public function execute(): void;
 }
