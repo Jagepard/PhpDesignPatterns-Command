@@ -17,10 +17,7 @@ namespace Behavioral\Command;
 class TurnOffCommand extends CommandInterface
 {
 
-    /**
-     * @return mixed|void
-     */
-    public function execute()
+    public function execute(): void
     {
         $this->getLamp()->turnOff();
     }
