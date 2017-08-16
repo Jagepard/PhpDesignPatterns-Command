@@ -33,7 +33,7 @@ abstract class CommandInterface
     /**
      * @return Lamp
      */
-    public function getLamp()
+    public function getLamp(): Lamp
     {
         return $this->lamp;
     }
