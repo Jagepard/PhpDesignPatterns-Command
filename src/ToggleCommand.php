@@ -25,15 +25,15 @@ class ToggleCommand extends CommandInterface
     /**
      * @return int
      */
-    public function getToggle()
+    public function getToggle(): int
     {
         return $this->toggle;
     }
 
     /**
-     * @param $toggle
+     * @param int $toggle
      */
-    public function setToggle($toggle)
+    public function setToggle(int $toggle)
     {
         $this->toggle = $toggle;
     }
@@ -41,7 +41,7 @@ class ToggleCommand extends CommandInterface
     /**
      * @return mixed|void
      */
-    public function execute()
+    public function execute(): void
     {
         if ($this->getToggle() % 2) {
             $this->setToggle($this->getToggle() + 1);
