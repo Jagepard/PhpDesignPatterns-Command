@@ -36,12 +36,12 @@ class CommandRegistry
      *
      * @return CommandInterface
      */
-    public function getRegistry(string $type): CommandInterface
+    public function getRegistry(string $type)
     {
         if (!isset($this->registry[$type])) {
-            echo 'Cannot find command ' . $type;
+            print 'Cannot find command ' . $type;
+        } else {
+            return $this->registry[$type];
         }
-
-        return $this->registry[$type];
     }
 }
