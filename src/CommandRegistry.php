@@ -26,7 +26,7 @@ class CommandRegistry
      * @param CommandInterface $command
      * @param                  $type
      */
-    public function setRegistry(CommandInterface $command, string $type)
+    public function setRegistry(CommandInterface $command, string $type): void
     {
         $this->registry[$type] = $command;
     }
