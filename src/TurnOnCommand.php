@@ -14,7 +14,7 @@ namespace Behavioral\Command;
  * Class TurnOnCommand
  * @package Behavioral\Command
  */
-class TurnOnCommand
+class TurnOnCommand implements InterfaceCommand
 {
 
     /**

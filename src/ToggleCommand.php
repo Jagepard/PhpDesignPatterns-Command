@@ -14,7 +14,7 @@ namespace Behavioral\Command;
  * Class ToggleCommand
  * @package Behavioral\Command
  */
-class ToggleCommand
+class ToggleCommand implements InterfaceCommand
 {
     /**
      * @return int
