@@ -14,14 +14,8 @@ namespace Behavioral\Command;
  * Class ToggleCommand
  * @package Behavioral\Command
  */
-class ToggleCommand extends CommandInterface
+class ToggleCommand
 {
-
-    /**
-     * @var int
-     */
-    protected $toggle = 1;
-
     /**
      * @return int
      */
@@ -39,16 +33,21 @@ class ToggleCommand extends CommandInterface
     }
 
     /**
-     * @return mixed|void
+     * @var int
      */
-    public function execute(): void
+    protected $toggle = 1;
+
+    /**
+     * @param InterfaceDevice $device
+     */
+    public function execute(InterfaceDevice $device)
     {
         if ($this->getToggle() % 2) {
             $this->setToggle($this->getToggle() + 1);
-            $this->getLamp()->turnOn();
+            $device->turnOn();
         } else {
             $this->setToggle($this->getToggle() + 1);
-            $this->getLamp()->turnOff();
+            $device->turnOff();
         }
     }
 }
