@@ -20,28 +20,49 @@ class CommandRegistry
     /**
      * @var array
      */
-    protected $registry = [];
+    protected $commandsRegistry = [];
 
     /**
-     * @param CommandInterface $command
-     * @param                  $type
+     * @var InterfaceDevice
      */
-    public function setRegistry(CommandInterface $command, string $type): void
+    protected $device;
+
+    /**
+     * CommandRegistry constructor.
+     * @param InterfaceDevice $device
+     */
+    public function __construct(InterfaceDevice $device)
     {
-        $this->registry[$type] = $command;
+        $this->device = $device;
+    }
+
+    /**
+     * @return InterfaceDevice
+     */
+    public function getDevice(): InterfaceDevice
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param        $command
+     * @param string $type
+     */
+    public function setCommand($command, string $type): void
+    {
+        $this->commandsRegistry[$type] = $command;
     }
 
     /**
      * @param string $type
-     *
-     * @return CommandInterface
+     * @return mixed
      */
-    public function getRegistry(string $type)
+    public function getCommand(string $type)
     {
-        if (!isset($this->registry[$type])) {
-            print 'Cannot find command ' . $type;
+        if (isset($this->commandsRegistry[$type])) {
+            return $this->commandsRegistry[$type]->execute($this->getDevice());
         } else {
-            return $this->registry[$type];
+            print 'Cannot find command ' . $type;
         }
     }
 }

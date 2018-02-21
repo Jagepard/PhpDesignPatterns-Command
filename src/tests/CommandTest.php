@@ -13,51 +13,44 @@ use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 class CommandTest extends PHPUnit_Framework_TestCase
 {
 
-    protected $lamp;
-
     protected $registry;
 
     protected function setUp(): void
     {
-        $this->lamp     = new \Behavioral\Command\Lamp();
-        $this->registry = new \Behavioral\Command\CommandRegistry();
+        $this->registry = new \Behavioral\Command\CommandRegistry(new \Behavioral\Command\Lamp());
 
-        $this->registry->setRegistry(new \Behavioral\Command\TurnOnCommand($this->lamp), 'ON');
-        $this->registry->setRegistry(new \Behavioral\Command\TurnOffCommand($this->lamp), 'OFF');
-        $this->registry->setRegistry(new \Behavioral\Command\ToggleCommand($this->lamp), 'TOGGLE');
+        $this->registry->setCommand(new \Behavioral\Command\TurnOnCommand(), 'ON');
+        $this->registry->setCommand(new \Behavioral\Command\TurnOffCommand(), 'OFF');
+        $this->registry->setCommand(new \Behavioral\Command\ToggleCommand(), 'TOGGLE');
     }
 
     public function testCommandRegistry(): void
     {
         ob_start();
-        $this->assertNull($this->getRegistry()->getRegistry('FALE'));
+        $this->assertNull($this->getRegistry()->getCommand('FALE'));
         $error = ob_get_clean();
         $this->assertEquals($error, 'Cannot find command FALE');
-
-        $this->assertInstanceOf(\Behavioral\Command\CommandInterface::class, $this->getRegistry()->getRegistry('ON'));
-        $this->assertInstanceOf(\Behavioral\Command\CommandInterface::class, $this->getRegistry()->getRegistry('OFF'));
-        $this->assertInstanceOf(\Behavioral\Command\CommandInterface::class, $this->getRegistry()->getRegistry('TOGGLE'));
     }
 
     public function testExecute(): void
     {
         ob_start();
-        $this->assertNull($this->getRegistry()->getRegistry('ON')->execute());
+        $this->assertNull($this->getRegistry()->getCommand('ON'));
         $on = ob_get_clean();
         $this->assertEquals($on, "The Light turns on \n");
 
         ob_start();
-        $this->assertNull($this->getRegistry()->getRegistry('OFF')->execute());
+        $this->assertNull($this->getRegistry()->getCommand('OFF'));
         $off = ob_get_clean();
         $this->assertEquals($off, "The Light turns off \n");
 
         ob_start();
-        $this->assertNull($this->getRegistry()->getRegistry('TOGGLE')->execute());
+        $this->assertNull($this->getRegistry()->getCommand('TOGGLE'));
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, "The Light turns on \n");
 
         ob_start();
-        $this->assertNull($this->getRegistry()->getRegistry('TOGGLE')->execute());
+        $this->assertNull($this->getRegistry()->getCommand('TOGGLE'));
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, "The Light turns off \n");
     }

@@ -14,7 +14,7 @@ namespace Behavioral\Command;
  * Class Lamp
  * @package Behavioral\Command
  */
-class Lamp
+class Lamp implements InterfaceDevice
 {
 
     public function turnOn()

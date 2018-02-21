@@ -14,11 +14,14 @@ namespace Behavioral\Command;
  * Class TurnOffCommand
  * @package Behavioral\Command
  */
-class TurnOffCommand extends CommandInterface
+class TurnOffCommand
 {
 
-    public function execute(): void
+    /**
+     * @param InterfaceDevice $device
+     */
+    public function execute(InterfaceDevice $device)
     {
-        $this->getLamp()->turnOff();
+        $device->turnOff();
     }
 }
