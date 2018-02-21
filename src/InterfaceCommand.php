@@ -1,27 +1,26 @@
 <?php
-
-declare(strict_types = 1);
-
 /**
+ * Date: 21.02.18
+ * Time: 23:45
+ *
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2017, Korotkov Danila
+ * @copyright Copyright (c) 2018, Korotkov Danila
  * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
  */
 
 namespace Behavioral\Command;
 
+
 /**
- * Class TurnOffCommand
+ * Interface InterfaceCommand
  * @package Behavioral\Command
  */
-class TurnOffCommand implements InterfaceCommand
+interface InterfaceCommand
 {
 
     /**
      * @param InterfaceDevice $device
+     * @return mixed
      */
-    public function execute(InterfaceDevice $device)
-    {
-        $device->turnOff();
-    }
+    public function execute(InterfaceDevice $device);
 }
