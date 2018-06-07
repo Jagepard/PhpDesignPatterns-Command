@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2017, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Command;
@@ -18,51 +17,47 @@ class CommandRegistry
 {
 
     /**
+     * @var DeviceInterface
+     */
+    protected $device;
+    /**
      * @var array
      */
     protected $commandsRegistry = [];
 
     /**
-     * @var InterfaceDevice
-     */
-    protected $device;
-
-    /**
      * CommandRegistry constructor.
-     * @param InterfaceDevice $device
+     * @param DeviceInterface $device
      */
-    public function __construct(InterfaceDevice $device)
+    public function __construct(DeviceInterface $device)
     {
         $this->device = $device;
     }
 
     /**
-     * @return InterfaceDevice
+     * @return DeviceInterface
      */
-    public function getDevice(): InterfaceDevice
+    public function getDevice(): DeviceInterface
     {
         return $this->device;
     }
 
     /**
-     * @param InterfaceCommand $command
+     * @param CommandInterface $command
      * @param string           $type
      */
-    public function setCommand(InterfaceCommand $command, string $type): void
+    public function setCommand(CommandInterface $command, string $type): void
     {
         $this->commandsRegistry[$type] = $command;
     }
 
     /**
      * @param string $type
-     * @return mixed
      */
-    public function getCommand(string $type)
+    public function getCommand(string $type): void
     {
         if (isset($this->commandsRegistry[$type])) {
-            return $this->commandsRegistry[$type]->execute($this->getDevice());
-        } else {
-            print 'Cannot find command ' . $type;
+            $this->commandsRegistry[$type]->execute($this->getDevice());
         }
     }
 }
