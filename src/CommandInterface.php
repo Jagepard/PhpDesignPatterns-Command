@@ -10,17 +10,15 @@ declare(strict_types=1);
 namespace Behavioral\Command;
 
 /**
- * Class TurnOnCommand
+ * Interface CommandInterface
  * @package Behavioral\Command
  */
-class TurnOnCommand implements CommandInterface
+interface CommandInterface
 {
 
     /**
      * @param DeviceInterface $device
+     * @return mixed
      */
-    public function execute(DeviceInterface $device): void
-    {
-        $device->turnOn();
-    }
+    public function execute(DeviceInterface $device): void;
 }
