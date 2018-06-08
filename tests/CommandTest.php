@@ -16,6 +16,10 @@ use Behavioral\Command\TurnOffCommand;
 use Behavioral\Command\CommandRegistry;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
+/**
+ * Class CommandTest
+ * @package Behavioral\Command\Tests
+ */
 class CommandTest extends PHPUnit_Framework_TestCase
 {
 
@@ -35,22 +39,22 @@ class CommandTest extends PHPUnit_Framework_TestCase
     public function testExecute(): void
     {
         ob_start();
-        $this->registry->getCommand('on');
+        $this->registry->executeCommand('on');
         $on = ob_get_clean();
         $this->assertEquals($on, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->registry->getCommand('off');
+        $this->registry->executeCommand('off');
         $off = ob_get_clean();
         $this->assertEquals($off, sprintf("The Light turns %s \n", 'off'));
 
         ob_start();
-        $this->registry->getCommand('toggle');
+        $this->registry->executeCommand('toggle');
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->registry->getCommand('toggle');
+        $this->registry->executeCommand('toggle');
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'off'));
     }
