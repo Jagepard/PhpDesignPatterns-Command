@@ -35,29 +35,21 @@ class CommandRegistry
     }
 
     /**
-     * @return DeviceInterface
-     */
-    public function getDevice(): DeviceInterface
-    {
-        return $this->device;
-    }
-
-    /**
      * @param CommandInterface $command
-     * @param string           $type
+     * @param string           $name
      */
-    public function setCommand(CommandInterface $command, string $type): void
+    public function setCommand(CommandInterface $command, string $name): void
     {
-        $this->commandsRegistry[$type] = $command;
+        $this->commandsRegistry[$name] = $command;
     }
 
     /**
-     * @param string $type
+     * @param string $name
      */
-    public function getCommand(string $type): void
+    public function executeCommand(string $name): void
     {
-        if (isset($this->commandsRegistry[$type])) {
-            $this->commandsRegistry[$type]->execute($this->getDevice());
+        if (isset($this->commandsRegistry[$name])) {
+            $this->commandsRegistry[$name]->execute($this->device);
         }
     }
 }
