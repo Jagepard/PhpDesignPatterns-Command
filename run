@@ -11,8 +11,7 @@ $registry->setCommand(new TurnOnCommand(), 'on');
 $registry->setCommand(new TurnOffCommand(), 'off');
 $registry->setCommand(new ToggleCommand(), 'toggle');
 
-$registry->getCommand('on');
-$registry->getCommand('off');
-
-$registry->getCommand('toggle');
-$registry->getCommand('toggle');
+$registry->executeCommand('on');
+$registry->executeCommand('off');
+$registry->executeCommand('toggle');
+$registry->executeCommand('toggle');
