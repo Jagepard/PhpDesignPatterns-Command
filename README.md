@@ -5,5 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# Command
+# Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/Command.md "Documentation API")
 Команда
+
+![Command](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/Command.png)
