@@ -18,11 +18,19 @@ class Lamp implements DeviceInterface
 
     public function turnOn(): void
     {
-        printf("The Light turns %s \n", 'on');
+        $this->execute('on');
     }
 
     public function turnOff(): void
     {
-        printf("The Light turns %s \n", 'off');
+        $this->execute('off');
+    }
+
+    /**
+     * @param string $status
+     */
+    protected function execute(string $status): void
+    {
+        printf("The Light turns %s \n", $status);
     }
 }

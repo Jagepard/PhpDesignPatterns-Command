@@ -4,9 +4,9 @@
 - [\Behavioral\Command\DeviceInterface (interface)](#interface-behavioralcommanddeviceinterface)
 - [\Behavioral\Command\TurnOnCommand](#class-behavioralcommandturnoncommand)
 - [\Behavioral\Command\CommandInterface (interface)](#interface-behavioralcommandcommandinterface)
+- [\Behavioral\Command\Registry](#class-behavioralcommandregistry)
 - [\Behavioral\Command\Lamp](#class-behavioralcommandlamp)
 - [\Behavioral\Command\TurnOffCommand](#class-behavioralcommandturnoffcommand)
-- [\Behavioral\Command\CommandRegistry](#class-behavioralcommandcommandregistry)
 
 <hr />
 
@@ -55,6 +55,18 @@
 
 <hr />
 
+### Class: \Behavioral\Command\Registry
+
+> Class Registry
+
+| Visibility | Function |
+|:-----------|:---------|
+| public | <strong>__construct(</strong><em>[\Behavioral\Command\DeviceInterface](#interface-behavioralcommanddeviceinterface)</em> <strong>$device</strong>)</strong> : <em>void</em><br /><em>CommandRegistry constructor.</em> |
+| public | <strong>execute(</strong><em>\string</em> <strong>$name</strong>)</strong> : <em>void</em> |
+| public | <strong>setCommand(</strong><em>[\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)</em> <strong>$command</strong>, <em>\string</em> <strong>$name</strong>)</strong> : <em>void</em> |
+
+<hr />
+
 ### Class: \Behavioral\Command\Lamp
 
 > Class Lamp
@@ -63,6 +75,7 @@
 |:-----------|:---------|
 | public | <strong>turnOff()</strong> : <em>void</em> |
 | public | <strong>turnOn()</strong> : <em>void</em> |
+| protected | <strong>execute(</strong><em>\string</em> <strong>$status</strong>)</strong> : <em>void</em> |
 
 *This class implements [\Behavioral\Command\DeviceInterface](#interface-behavioralcommanddeviceinterface)*
 
@@ -77,16 +90,4 @@
 | public | <strong>execute(</strong><em>[\Behavioral\Command\DeviceInterface](#interface-behavioralcommanddeviceinterface)</em> <strong>$device</strong>)</strong> : <em>void</em> |
 
 *This class implements [\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)*
-
-<hr />
-
-### Class: \Behavioral\Command\CommandRegistry
-
-> Class CommandRegistry
-
-| Visibility | Function |
-|:-----------|:---------|
-| public | <strong>__construct(</strong><em>[\Behavioral\Command\DeviceInterface](#interface-behavioralcommanddeviceinterface)</em> <strong>$device</strong>)</strong> : <em>void</em><br /><em>CommandRegistry constructor.</em> |
-| public | <strong>executeCommand(</strong><em>\string</em> <strong>$name</strong>)</strong> : <em>void</em> |
-| public | <strong>setCommand(</strong><em>[\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)</em> <strong>$command</strong>, <em>\string</em> <strong>$name</strong>)</strong> : <em>void</em> |
 

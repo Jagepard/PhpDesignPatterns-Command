@@ -10,10 +10,10 @@ declare(strict_types=1);
 namespace Behavioral\Command;
 
 /**
- * Class CommandRegistry
+ * Class Registry
  * @package Behavioral\Command
  */
-class CommandRegistry
+class Registry
 {
 
     /**
@@ -46,7 +46,7 @@ class CommandRegistry
     /**
      * @param string $name
      */
-    public function executeCommand(string $name): void
+    public function execute(string $name): void
     {
         if (isset($this->commandsRegistry[$name])) {
             $this->commandsRegistry[$name]->execute($this->device);

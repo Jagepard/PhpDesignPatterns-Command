@@ -5,9 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/Command.md "Documentation API")
+# Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/docs.md "Documentation API")
 Команда
 
 В объектно-ориентированном программировании шаблон проектирования Команда является поведенческим шаблоном, в котором объект используется для инкапсуляции всей информации, необходимой для выполнения действия или вызова события в более позднее время. Эта информация включает в себя имя метода, объект, который является владельцем метода и значения параметров метода.
 
-![Command](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/Command.png)
+![Command](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/UML.png)
