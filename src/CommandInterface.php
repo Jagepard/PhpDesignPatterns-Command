@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 interface CommandInterface
 {
-
     /**
      * @param DeviceInterface $device
      * @return mixed

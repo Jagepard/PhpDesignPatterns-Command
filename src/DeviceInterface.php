@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 interface DeviceInterface
 {
-
     public function turnOn(): void;
 
     public function turnOff(): void;

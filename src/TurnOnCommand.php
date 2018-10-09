@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 class TurnOnCommand implements CommandInterface
 {
-
     /**
      * @param DeviceInterface $device
      */

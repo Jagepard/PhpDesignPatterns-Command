@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 class Registry
 {
-
     /**
      * @var DeviceInterface
      */

@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 class ToggleCommand implements CommandInterface
 {
-
     /**
      * @var int
      */

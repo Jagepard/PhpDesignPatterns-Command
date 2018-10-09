@@ -15,7 +15,6 @@ namespace Behavioral\Command;
  */
 class Lamp implements DeviceInterface
 {
-
     public function turnOn(): void
     {
         $this->execute('on');
