@@ -10,16 +10,17 @@ declare(strict_types=1);
 namespace Behavioral\Command;
 
 /**
- * Class Lamp
+ * Trait CommandTrait
  * @package Behavioral\Command
  */
-class Lamp implements DeviceInterface
+trait CommandTrait
 {
     /**
-     * @param TypeInterface $type
+     * @param DeviceInterface $device
+     * @param TypeInterface   $type
      */
-    public function execute(TypeInterface $type): void
+    public function execute(DeviceInterface $device, TypeInterface $type): void
     {
-        printf("The Light turns %s \n", $type->getName());
+        $device->execute($type);
     }
 }

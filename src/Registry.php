@@ -13,16 +13,16 @@ namespace Behavioral\Command;
  * Class Registry
  * @package Behavioral\Command
  */
-class Registry
+class Registry implements RegistryInterface
 {
     /**
      * @var DeviceInterface
      */
-    protected $device;
+    private $device;
     /**
      * @var array
      */
-    protected $commandsRegistry = [];
+    private $commandsRegistry = [];
 
     /**
      * CommandRegistry constructor.
@@ -35,20 +35,45 @@ class Registry
 
     /**
      * @param CommandInterface $command
-     * @param string           $name
+     * @param TypeInterface    $type
      */
-    public function setCommand(CommandInterface $command, string $name): void
+    public function setCommand(CommandInterface $command, TypeInterface $type): void
     {
-        $this->commandsRegistry[$name] = $command;
+        $this->commandsRegistry[$type->getName()] = $command;
     }
 
     /**
-     * @param string $name
+     * @param TypeInterface $type
      */
-    public function execute(string $name): void
+    public function execute(TypeInterface $type): void
     {
-        if (isset($this->commandsRegistry[$name])) {
-            $this->commandsRegistry[$name]->execute($this->device);
+        if (isset($this->commandsRegistry[$type->getName()])) {
+            $this->getCommandsRegistry($type->getName())->execute($this->getDevice(), $type);
         }
+    }
+
+    /**
+     * @return DeviceInterface
+     */
+    public function getDevice(): DeviceInterface
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param string|null $key
+     * @return array|mixed
+     */
+    public function getCommandsRegistry(string $key = null)
+    {
+        if (isset($key)) {
+            if (array_key_exists($key, $this->commandsRegistry)) {
+                return $this->commandsRegistry[$key];
+            }
+
+            throw new \InvalidArgumentException('Wrong argument');
+        }
+
+        return $this->commandsRegistry;
     }
 }

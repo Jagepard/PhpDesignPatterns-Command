@@ -17,7 +17,7 @@ interface CommandInterface
 {
     /**
      * @param DeviceInterface $device
-     * @return mixed
+     * @param TypeInterface   $type
      */
-    public function execute(DeviceInterface $device): void;
+    public function execute(DeviceInterface $device, TypeInterface $type): void;
 }

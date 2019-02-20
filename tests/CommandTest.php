@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Behavioral\Command\Tests;
 
+use Behavioral\Command\CommandType;
 use Behavioral\Command\Lamp;
 use Behavioral\Command\ToggleCommand;
 use Behavioral\Command\TurnOnCommand;
@@ -25,36 +26,44 @@ class CommandTest extends PHPUnit_Framework_TestCase
     /**
      * @var Registry
      */
-    protected $registry;
+    private $registry;
 
     protected function setUp(): void
     {
         $this->registry = new Registry(new Lamp());
-        $this->registry->setCommand(new TurnOnCommand(), 'on');
-        $this->registry->setCommand(new TurnOffCommand(), 'off');
-        $this->registry->setCommand(new ToggleCommand(), 'toggle');
+        $this->getRegistry()->setCommand(new TurnOnCommand(), new CommandType('on'));
+        $this->getRegistry()->setCommand(new TurnOffCommand(), new CommandType('off'));
+        $this->getRegistry()->setCommand(new ToggleCommand(), new CommandType('toggle'));
     }
 
     public function testExecute(): void
     {
         ob_start();
-        $this->registry->execute('on');
+        $this->getRegistry()->execute(new CommandType('on'));
         $on = ob_get_clean();
         $this->assertEquals($on, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->registry->execute('off');
+        $this->getRegistry()->execute(new CommandType('off'));
         $off = ob_get_clean();
         $this->assertEquals($off, sprintf("The Light turns %s \n", 'off'));
 
         ob_start();
-        $this->registry->execute('toggle');
+        $this->getRegistry()->execute(new CommandType('toggle'));
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->registry->execute('toggle');
+        $this->getRegistry()->execute(new CommandType('toggle'));
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'off'));
+    }
+
+    /**
+     * @return Registry
+     */
+    public function getRegistry(): Registry
+    {
+        return $this->registry;
     }
 }
