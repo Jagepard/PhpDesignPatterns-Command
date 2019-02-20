@@ -22,6 +22,7 @@ class ToggleCommand implements CommandInterface
 
     /**
      * @param DeviceInterface $device
+     * @param TypeInterface   $type
      */
     public function execute(DeviceInterface $device, TypeInterface $type): void
     {
