@@ -15,21 +15,11 @@ namespace Behavioral\Command;
  */
 class Lamp implements DeviceInterface
 {
-    public function turnOn(): void
-    {
-        $this->execute('on');
-    }
-
-    public function turnOff(): void
-    {
-        $this->execute('off');
-    }
-
     /**
-     * @param string $status
+     * @param TypeInterface $type
      */
-    protected function execute(string $status): void
+    public function execute(TypeInterface $type): void
     {
-        printf("The Light turns %s \n", $status);
+        printf("The Light turns %s \n", $type->getName());
     }
 }
