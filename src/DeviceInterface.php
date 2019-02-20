@@ -15,7 +15,8 @@ namespace Behavioral\Command;
  */
 interface DeviceInterface
 {
-    public function turnOn(): void;
-
-    public function turnOff(): void;
+    /**
+     * @param TypeInterface $type
+     */
+    public function execute(TypeInterface $type): void;
 }
