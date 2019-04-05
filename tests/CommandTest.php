@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Command\Tests;
@@ -17,10 +17,6 @@ use Behavioral\Command\TurnOffCommand;
 use Behavioral\Command\Registry;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
-/**
- * Class CommandTest
- * @package Behavioral\Command\Tests
- */
 class CommandTest extends PHPUnit_Framework_TestCase
 {
     /**
