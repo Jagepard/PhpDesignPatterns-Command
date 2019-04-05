@@ -1,16 +1,12 @@
 <?php
 
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\Command;
 
-/**
- * Interface RegistryInterface
- * @package Behavioral\Command
- */
 interface RegistryInterface
 {
     /**
