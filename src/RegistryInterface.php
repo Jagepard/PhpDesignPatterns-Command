@@ -10,13 +10,13 @@ namespace Behavioral\Command;
 interface RegistryInterface
 {
     /**
+     * @param string           $type
      * @param CommandInterface $command
-     * @param TypeInterface    $type
      */
-    public function setCommand(CommandInterface $command, TypeInterface $type): void;
+    public function setCommand(string $type, CommandInterface $command): void;
 
     /**
-     * @param TypeInterface $type
+     * @param string $type
      */
-    public function execute(TypeInterface $type): void;
+    public function execute(string $type): void;
 }

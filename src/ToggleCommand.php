@@ -17,12 +17,12 @@ class ToggleCommand implements CommandInterface
     private $toggle = 1;
 
     /**
+     * @param string          $type
      * @param DeviceInterface $device
-     * @param TypeInterface   $type
      */
-    public function execute(DeviceInterface $device, TypeInterface $type): void
+    public function execute(string $type, DeviceInterface $device): void
     {
-        ($this->getToggle() % 2) ? $type->setName('on') : $type->setName('off');
+        $type = ($this->getToggle() % 2) ? 'on' : 'off';
         $this->setToggle($this->getToggle() + 1);
         $device->execute($type);
     }
