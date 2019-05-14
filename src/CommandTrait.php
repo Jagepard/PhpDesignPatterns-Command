@@ -10,10 +10,10 @@ namespace Behavioral\Command;
 trait CommandTrait
 {
     /**
+     * @param string          $type
      * @param DeviceInterface $device
-     * @param TypeInterface   $type
      */
-    public function execute(DeviceInterface $device, TypeInterface $type): void
+    public function execute(string $type, DeviceInterface $device): void
     {
         $device->execute($type);
     }

@@ -12,10 +12,10 @@ namespace Behavioral\Command;
 class Lamp implements DeviceInterface
 {
     /**
-     * @param TypeInterface $type
+     * @param string $type
      */
-    public function execute(TypeInterface $type): void
+    public function execute(string $type): void
     {
-        printf("The Light turns %s \n", $type->getName());
+        printf("The Light turns %s \n", $type);
     }
 }

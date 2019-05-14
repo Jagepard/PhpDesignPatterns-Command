@@ -30,21 +30,21 @@ class Registry implements RegistryInterface
     }
 
     /**
+     * @param string           $type
      * @param CommandInterface $command
-     * @param TypeInterface    $type
      */
-    public function setCommand(CommandInterface $command, TypeInterface $type): void
+    public function setCommand(string $type, CommandInterface $command): void
     {
-        $this->commandsRegistry[$type->getName()] = $command;
+        $this->commandsRegistry[$type] = $command;
     }
 
     /**
-     * @param TypeInterface $type
+     * @param string $type
      */
-    public function execute(TypeInterface $type): void
+    public function execute(string $type): void
     {
-        if (isset($this->commandsRegistry[$type->getName()])) {
-            $this->getCommandsRegistry($type->getName())->execute($this->getDevice(), $type);
+        if (isset($this->commandsRegistry[$type])) {
+            $this->getCommandsRegistry($type)->execute($type, $this->getDevice());
         }
     }
 

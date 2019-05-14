@@ -27,30 +27,30 @@ class CommandTest extends PHPUnit_Framework_TestCase
     protected function setUp(): void
     {
         $this->registry = new Registry(new Lamp());
-        $this->getRegistry()->setCommand(new TurnOnCommand(), new CommandType('on'));
-        $this->getRegistry()->setCommand(new TurnOffCommand(), new CommandType('off'));
-        $this->getRegistry()->setCommand(new ToggleCommand(), new CommandType('toggle'));
+        $this->getRegistry()->setCommand('on', new TurnOnCommand());
+        $this->getRegistry()->setCommand('off', new TurnOffCommand());
+        $this->getRegistry()->setCommand('toggle', new ToggleCommand());
     }
 
     public function testExecute(): void
     {
         ob_start();
-        $this->getRegistry()->execute(new CommandType('on'));
+        $this->getRegistry()->execute('on');
         $on = ob_get_clean();
         $this->assertEquals($on, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->getRegistry()->execute(new CommandType('off'));
+        $this->getRegistry()->execute('off');
         $off = ob_get_clean();
         $this->assertEquals($off, sprintf("The Light turns %s \n", 'off'));
 
         ob_start();
-        $this->getRegistry()->execute(new CommandType('toggle'));
+        $this->getRegistry()->execute('toggle');
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'on'));
 
         ob_start();
-        $this->getRegistry()->execute(new CommandType('toggle'));
+        $this->getRegistry()->execute('toggle');
         $toggle = ob_get_clean();
         $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'off'));
     }
