@@ -35,6 +35,10 @@ class Registry implements RegistryInterface
      */
     public function setCommand(string $type, CommandInterface $command): void
     {
+        if (array_key_exists($type, $this->commandsRegistry)) {
+            throw new \InvalidArgumentException('Command already exists');
+        }
+
         $this->commandsRegistry[$type] = $command;
     }
 
