@@ -47,9 +47,11 @@ class Registry implements RegistryInterface
      */
     public function execute(string $type): void
     {
-        if (isset($this->commandsRegistry[$type])) {
-            $this->getCommandsRegistry($type)->execute($type, $this->getDevice());
+        if (!array_key_exists($type, $this->commandsRegistry)) {
+            throw new \InvalidArgumentException('Type does not exist in the Chain');
         }
+
+        $this->getCommandsRegistry($type)->execute($type, $this->getDevice());
     }
 
     /**
