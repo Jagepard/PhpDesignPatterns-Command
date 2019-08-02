@@ -35,6 +35,10 @@ class Registry implements RegistryInterface
      */
     public function setCommand(string $type, CommandInterface $command): void
     {
+        if (array_key_exists($type, $this->commandsRegistry)) {
+            throw new \InvalidArgumentException('Command already exists');
+        }
+
         $this->commandsRegistry[$type] = $command;
     }
 
@@ -43,9 +47,7 @@ class Registry implements RegistryInterface
      */
     public function execute(string $type): void
     {
-        if (isset($this->commandsRegistry[$type])) {
-            $this->getCommandsRegistry($type)->execute($type, $this->getDevice());
-        }
+        $this->getCommandsRegistry($type)->execute($type, $this->getDevice());
     }
 
     /**
@@ -67,7 +69,7 @@ class Registry implements RegistryInterface
                 return $this->commandsRegistry[$key];
             }
 
-            throw new \InvalidArgumentException('Wrong argument');
+            throw new \InvalidArgumentException('Type does not exist in the Chain');
         }
 
         return $this->commandsRegistry;

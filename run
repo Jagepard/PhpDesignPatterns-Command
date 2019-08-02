@@ -7,11 +7,14 @@ require_once 'vendor/autoload.php';
 
 $registry = new Registry(new Lamp());
 
-$registry->setCommand(new TurnOnCommand(), new CommandType('on'));
-$registry->setCommand(new TurnOffCommand(), new CommandType('off'));
-$registry->setCommand(new ToggleCommand(), new CommandType('toggle'));
-
-$registry->execute(new CommandType('on'));
-$registry->execute(new CommandType('off'));
-$registry->execute(new CommandType('toggle'));
-$registry->execute(new CommandType('toggle'));
+try {
+    $registry->setCommand('on', new TurnOnCommand());
+    $registry->setCommand('off', new TurnOffCommand());
+    $registry->setCommand('toggle', new ToggleCommand());
+    $registry->execute('on');
+    $registry->execute('off');
+    $registry->execute('toggle');
+    $registry->execute('toggle');
+} catch (\Exception $e) {
+    printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
+}
