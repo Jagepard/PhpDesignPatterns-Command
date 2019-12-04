@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
@@ -9,9 +9,5 @@ namespace Behavioral\Command;
 
 interface CommandInterface
 {
-    /**
-     * @param string          $type
-     * @param DeviceInterface $device
-     */
-    public function execute(string $type, DeviceInterface $device): void;
+    public function execute(): void;
 }

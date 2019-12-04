@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
@@ -12,34 +12,14 @@ namespace Behavioral\Command;
 class ToggleCommand implements CommandInterface
 {
     /**
-     * @var int
+     * @var integer
      */
     private $toggle = 1;
 
-    /**
-     * @param string          $type
-     * @param DeviceInterface $device
-     */
-    public function execute(string $type, DeviceInterface $device): void
+    public function execute(): void
     {
-        $type = ($this->getToggle() % 2) ? 'on' : 'off';
-        $this->setToggle($this->getToggle() + 1);
-        $device->execute($type);
-    }
-
-    /**
-     * @return int
-     */
-    public function getToggle(): int
-    {
-        return $this->toggle;
-    }
-
-    /**
-     * @param int $toggle
-     */
-    public function setToggle(int $toggle): void
-    {
-        $this->toggle = $toggle;
+        $command = ($this->toggle % 2) ? new TurnOnCommand() : new TurnOffCommand();
+        $this->toggle++;
+        $command->execute();
     }
 }
