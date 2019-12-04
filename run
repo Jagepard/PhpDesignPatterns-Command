@@ -5,16 +5,16 @@ namespace Behavioral\Command;
 
 require_once 'vendor/autoload.php';
 
-$registry = new Registry(new Lamp());
+$device = new Lamp();
 
 try {
-    $registry->setCommand('on', new TurnOnCommand());
-    $registry->setCommand('off', new TurnOffCommand());
-    $registry->setCommand('toggle', new ToggleCommand());
-    $registry->execute('on');
-    $registry->execute('off');
-    $registry->execute('toggle');
-    $registry->execute('toggle');
+    $device->setCommand('on', new TurnOnCommand());
+    $device->setCommand('off', new TurnOffCommand());
+    $device->setCommand('toggle', new ToggleCommand());
+    $device->execute('on');
+    $device->execute('off');
+    $device->execute('toggle');
+    $device->execute('toggle');
 } catch (\Exception $e) {
     printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
 }
