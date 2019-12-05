@@ -9,10 +9,6 @@ declare(strict_types=1);
 
 namespace Behavioral\Command;
 
-/**
- * Class TurnOnCommand
- * @package Behavioral\Command
- */
 class TurnOnCommand implements CommandInterface
 {
     public function execute(): void
