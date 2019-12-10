@@ -10,13 +10,13 @@ namespace Behavioral\Command;
 interface DeviceInterface
 {
     /**
-     * @param string $type
+     * @param  string  $commandName
      */
-    public function execute(string $type): void;
+    public function execute(string $commandName): void;
 
     /**
-     * @param string           $type
-     * @param CommandInterface $command
+     * @param  string  $commandName
+     * @param  CommandInterface  $command
      */
-    public function setCommand(string $type, CommandInterface $command): void;
+    public function setCommand(string $commandName, CommandInterface $command): void;
 }
