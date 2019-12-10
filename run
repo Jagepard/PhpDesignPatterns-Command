@@ -16,5 +16,5 @@ try {
     $device->execute('toggle');
     $device->execute('toggle');
 } catch (\Exception $e) {
-    printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
+    printf('%s', 'Caught exception: '.$e->getMessage()."\n");
 }
