@@ -7,8 +7,6 @@
 
 # Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/docs.md "Documentation API")
 
-```php run``` Запустить исполнение шаблона в терминале
+```php run``` execute in terminal
 
-Команда
-
-В объектно-ориентированном программировании шаблон проектирования Команда является поведенческим шаблоном, в котором объект используется для инкапсуляции всей информации, необходимой для выполнения действия или вызова события в более позднее время. Эта информация включает в себя имя метода, объект, который является владельцем метода и значения параметров метода.
+![Command](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/UML.png)
