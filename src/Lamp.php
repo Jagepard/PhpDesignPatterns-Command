@@ -22,7 +22,7 @@ class Lamp implements DeviceInterface
     public function execute(string $commandName): void
     {
         if (!array_key_exists($commandName, $this->commands)) {
-            throw new \InvalidArgumentException('Type does not exist in the registry');
+            throw new \InvalidArgumentException('Command does not exist in the registry');
         }
 
         $this->commands[$commandName]->execute();
