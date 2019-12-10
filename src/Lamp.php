@@ -14,30 +14,30 @@ class Lamp implements DeviceInterface
     /**
      * @var array
      */
-    private $commandsRegistry = [];
+    private $commands = [];
 
     /**
-     * @param string $type
+     * @param  string  $commandName
      */
-    public function execute(string $type): void
+    public function execute(string $commandName): void
     {
-        if (!array_key_exists($type, $this->commandsRegistry)) {
-            throw new \InvalidArgumentException('Type does not exist in the Registry');
+        if (!array_key_exists($commandName, $this->commands)) {
+            throw new \InvalidArgumentException('Type does not exist in the registry');
         }
 
-        $this->commandsRegistry[$type]->execute();
+        $this->commands[$commandName]->execute();
     }
 
     /**
-     * @param string           $type
-     * @param CommandInterface $command
+     * @param  string  $commandName
+     * @param  CommandInterface  $command
      */
-    public function setCommand(string $type, CommandInterface $command): void
+    public function setCommand(string $commandName, CommandInterface $command): void
     {
-        if (array_key_exists($type, $this->commandsRegistry)) {
+        if (array_key_exists($commandName, $this->commands)) {
             throw new \InvalidArgumentException('Command already exists');
         }
 
-        $this->commandsRegistry[$type] = $command;
+        $this->commands[$commandName] = $command;
     }
 }
