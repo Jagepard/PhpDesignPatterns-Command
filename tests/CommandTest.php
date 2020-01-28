@@ -9,19 +9,18 @@ declare(strict_types=1);
 
 namespace Behavioral\Command\Tests;
 
-use Behavioral\Command\Lamp;
-use Behavioral\Command\ToggleCommand;
-use Behavioral\Command\TurnOnCommand;
-use Behavioral\Command\TurnOffCommand;
-use Behavioral\Command\DeviceInterface;
+use Behavioral\Command\{
+    Lamp,
+    ToggleCommand,
+    TurnOnCommand,
+    TurnOffCommand,
+    DeviceInterface
+};
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
 class CommandTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * @var DeviceInterface
-     */
-    private $device;
+    private DeviceInterface $device;
 
     protected function setUp(): void
     {
