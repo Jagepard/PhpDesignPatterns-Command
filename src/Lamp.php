@@ -11,10 +11,7 @@ namespace Behavioral\Command;
 
 class Lamp implements DeviceInterface
 {
-    /**
-     * @var array
-     */
-    private $commands = [];
+    private array $commands = [];
 
     /**
      * @param  string  $commandName

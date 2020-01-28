@@ -11,10 +11,7 @@ namespace Behavioral\Command;
 
 class ToggleCommand implements CommandInterface
 {
-    /**
-     * @var integer
-     */
-    private $toggle = 1;
+    private int $toggle = 1;
 
     public function execute(): void
     {
