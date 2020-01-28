@@ -5,8 +5,5 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/docs.md "Documentation API")
-
+# Command 
 ```php run``` execute in terminal
-
-![Command](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/UML.png)
