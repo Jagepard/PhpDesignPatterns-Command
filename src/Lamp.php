@@ -19,7 +19,7 @@ class Lamp implements DeviceInterface
     public function execute(string $commandName): void
     {
         if (!array_key_exists($commandName, $this->commands)) {
-            throw new \InvalidArgumentException('Command does not exist in the registry');
+            throw new \InvalidArgumentException("Command does not exist in the registry");
         }
 
         $this->commands[$commandName]->execute();
@@ -32,7 +32,7 @@ class Lamp implements DeviceInterface
     public function setCommand(string $commandName, CommandInterface $command): void
     {
         if (array_key_exists($commandName, $this->commands)) {
-            throw new \InvalidArgumentException('Command already exists');
+            throw new \InvalidArgumentException("Command already exists");
         }
 
         $this->commands[$commandName] = $command;
