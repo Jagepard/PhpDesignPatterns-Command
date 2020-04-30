@@ -25,31 +25,31 @@ class CommandTest extends PHPUnit_Framework_TestCase
     protected function setUp(): void
     {
         $this->device = new Lamp();
-        $this->device->setCommand('on', new TurnOnCommand());
-        $this->device->setCommand('off', new TurnOffCommand());
-        $this->device->setCommand('toggle', new ToggleCommand());
+        $this->device->setCommand("on", new TurnOnCommand());
+        $this->device->setCommand("off", new TurnOffCommand());
+        $this->device->setCommand("toggle", new ToggleCommand());
     }
 
     public function testExecute(): void
     {
         ob_start();
-        $this->device->execute('on');
+        $this->device->execute("on");
         $on = ob_get_clean();
-        $this->assertEquals($on, sprintf("The Light turns %s \n", 'on'));
+        $this->assertEquals($on, sprintf("The Light turns %s \n", "on"));
 
         ob_start();
-        $this->device->execute('off');
+        $this->device->execute("off");
         $off = ob_get_clean();
-        $this->assertEquals($off, sprintf("The Light turns %s \n", 'off'));
+        $this->assertEquals($off, sprintf("The Light turns %s \n", "off"));
 
         ob_start();
-        $this->device->execute('toggle');
+        $this->device->execute("toggle");
         $toggle = ob_get_clean();
-        $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'on'));
+        $this->assertEquals($toggle, sprintf("The Light turns %s \n", "on"));
 
         ob_start();
-        $this->device->execute('toggle');
+        $this->device->execute("toggle");
         $toggle = ob_get_clean();
-        $this->assertEquals($toggle, sprintf("The Light turns %s \n", 'off'));
+        $this->assertEquals($toggle, sprintf("The Light turns %s \n", "off"));
     }
 }
