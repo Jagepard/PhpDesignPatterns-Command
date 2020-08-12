@@ -13,9 +13,6 @@ class Lamp implements DeviceInterface
 {
     private array $commands = [];
 
-    /**
-     * @param  string  $commandName
-     */
     public function execute(string $commandName): void
     {
         if (!array_key_exists($commandName, $this->commands)) {
@@ -25,10 +22,6 @@ class Lamp implements DeviceInterface
         $this->commands[$commandName]->execute();
     }
 
-    /**
-     * @param  string  $commandName
-     * @param  CommandInterface  $command
-     */
     public function setCommand(string $commandName, CommandInterface $command): void
     {
         if (array_key_exists($commandName, $this->commands)) {
