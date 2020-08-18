@@ -6,7 +6,7 @@
 -----
 
 # Command | [API](https://github.com/Jagepard/PhpDesignPatterns-Command/blob/master/api.md)
-```php run``` execute in terminal
+```php main.php``` execute in terminal
 
 ## Result:
 ```
