@@ -1,67 +1,64 @@
 ## Table of contents
+- [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
+- [Behavioral\Command\DeviceInterface](#behavioral_command_deviceinterface)
+- [Behavioral\Command\Lamp](#behavioral_command_lamp)
+- [Behavioral\Command\ToggleCommand](#behavioral_command_togglecommand)
+- [Behavioral\Command\TurnOffCommand](#behavioral_command_turnoffcommand)
+- [Behavioral\Command\TurnOnCommand](#behavioral_command_turnoncommand)
+<hr>
 
-- [\Behavioral\Command\CommandInterface (interface)](#interface-behavioralcommandcommandinterface)
-- [\Behavioral\Command\DeviceInterface (interface)](#interface-behavioralcommanddeviceinterface)
-- [\Behavioral\Command\Lamp](#class-behavioralcommandlamp)
-- [\Behavioral\Command\ToggleCommand](#class-behavioralcommandtogglecommand)
-- [\Behavioral\Command\TurnOffCommand](#class-behavioralcommandturnoffcommand)
-- [\Behavioral\Command\TurnOnCommand](#class-behavioralcommandturnoncommand)
+<a id="behavioral_command_commandinterface"></a>
 
-<hr />
-
-### Interface: \Behavioral\Command\CommandInterface
-
+### Class: Behavioral\Command\CommandInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute()</strong> : <em>void</em> |
+|abstract public|<em><strong>execute</strong>(): void</em><br>|
 
-<hr />
 
-### Interface: \Behavioral\Command\DeviceInterface
+<a id="behavioral_command_deviceinterface"></a>
 
+### Class: Behavioral\Command\DeviceInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute(</strong><em>\string</em> <strong>$commandName</strong>)</strong> : <em>void</em> |
-| public | <strong>setCommand(</strong><em>\string</em> <strong>$commandName</strong>, <em>[\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)</em> <strong>$command</strong>)</strong> : <em>void</em> |
+|abstract public|<em><strong>execute</strong>( string $commandName ): void</em><br>|
+|abstract public|<em><strong>setCommand</strong>( string $commandName  Behavioral\Command\CommandInterface $command ): void</em><br>|
 
-<hr />
 
-### Class: \Behavioral\Command\Lamp
+<a id="behavioral_command_lamp"></a>
 
+### Class: Behavioral\Command\Lamp
+##### implements [Behavioral\Command\DeviceInterface](#behavioral_command_deviceinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute(</strong><em>\string</em> <strong>$commandName</strong>)</strong> : <em>void</em> |
-| public | <strong>setCommand(</strong><em>\string</em> <strong>$commandName</strong>, <em>[\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)</em> <strong>$command</strong>)</strong> : <em>void</em> |
+|public|<em><strong>execute</strong>( string $commandName ): void</em><br>|
+|public|<em><strong>setCommand</strong>( string $commandName  Behavioral\Command\CommandInterface $command ): void</em><br>|
 
-*This class implements [\Behavioral\Command\DeviceInterface](#interface-behavioralcommanddeviceinterface)*
 
-<hr />
+<a id="behavioral_command_togglecommand"></a>
 
-### Class: \Behavioral\Command\ToggleCommand
-
+### Class: Behavioral\Command\ToggleCommand
+##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute()</strong> : <em>void</em> |
+|public|<em><strong>execute</strong>(): void</em><br>|
 
-*This class implements [\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)*
 
-<hr />
+<a id="behavioral_command_turnoffcommand"></a>
 
-### Class: \Behavioral\Command\TurnOffCommand
-
+### Class: Behavioral\Command\TurnOffCommand
+##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute()</strong> : <em>void</em> |
+|public|<em><strong>execute</strong>(): void</em><br>|
 
-*This class implements [\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)*
 
-<hr />
+<a id="behavioral_command_turnoncommand"></a>
 
-### Class: \Behavioral\Command\TurnOnCommand
-
+### Class: Behavioral\Command\TurnOnCommand
+##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute()</strong> : <em>void</em> |
+|public|<em><strong>execute</strong>(): void</em><br>|
+<hr>
 
-*This class implements [\Behavioral\Command\CommandInterface](#interface-behavioralcommandcommandinterface)*
-
+###### created with [Rudra-Markdown](#https://github.com/Jagepard/Rudra-Markdown)
