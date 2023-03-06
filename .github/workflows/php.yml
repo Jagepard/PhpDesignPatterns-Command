@@ -35,14 +35,14 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     # - name: Run test suite
-    #   run: composer run-script test
-    
+    #   run: composer run-script test    
+        
     - name: PHPUnit Tests
-      uses: php-actions/phpunit@master
+      uses: php-actions/phpunit@v3
       env:
         TEST_NAME: Scarlett
       with:
-        php_version: "7.4"
         bootstrap: vendor/autoload.php
-        configuration: phpunit.xml
+        configuration: test/phpunit.xml
         args: --coverage-text
+        php_version: "7.4"
