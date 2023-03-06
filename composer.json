@@ -22,7 +22,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "rudra/markdown": "dev-master"
+        "rudra/docs": "dev-master"
     },
     "autoload": {
         "psr-4": {
