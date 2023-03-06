@@ -1,4 +1,4 @@
-[![Build Status](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-Command/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-Command/build-status/master)
+[![PHP Composer](https://github.com/Jagepard/PhpDesignPatterns-Command/actions/workflows/php.yml/badge.svg)](https://github.com/Jagepard/PhpDesignPatterns-Command/actions/workflows/php.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-Command/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-Command/?branch=master)
 [![Code Climate](https://codeclimate.com/github/Jagepard/PhpDesignPatterns-Command/badges/gpa.svg)](https://codeclimate.com/github/Jagepard/PhpDesignPatterns-Command)
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
