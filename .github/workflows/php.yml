@@ -37,10 +37,11 @@ jobs:
     # - name: Run test suite
     #   run: composer run-script test
     
-    - name: PHPUnit (graychen)
-      # You may pin to the exact commit or the version.
-      # uses: Graychen/phpunit-action@026f8104f1a6b5bc646df2d495bc8b34080c3e03
-      uses: Graychen/phpunit-action@v1.0.0
+    - name: PHPUnit Tests
+      uses: php-actions/phpunit@master
+      env:
+        TEST_NAME: Scarlett
       with:
-        # Configuration file location
-        config: phpunit.xml
+        bootstrap: vendor/autoload.php
+        configuration: phpunit.xml
+        args: --coverage-text
