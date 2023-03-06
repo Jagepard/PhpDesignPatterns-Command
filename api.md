@@ -30,8 +30,8 @@
 ##### implements [Behavioral\Command\DeviceInterface](#behavioral_command_deviceinterface)
 | Visibility | Function |
 |:-----------|:---------|
-|public|<em><strong>execute</strong>( string $commandName ): void</em><br>|
-|public|<em><strong>setCommand</strong>( string $commandName  Behavioral\Command\CommandInterface $command ): void</em><br>|
+|public|<em><strong>execute</strong>( string $commandName ): void</em><br>Executes a specific command from the registry<br>Исполняет определенную команду из реестра|
+|public|<em><strong>setCommand</strong>( string $commandName  Behavioral\Command\CommandInterface $command ): void</em><br>Adds a command to the registry<br>Добавляет команду в реестр|
 
 
 <a id="behavioral_command_togglecommand"></a>
@@ -40,7 +40,7 @@
 ##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-|public|<em><strong>execute</strong>(): void</em><br>|
+|public|<em><strong>execute</strong>(): void</em><br>Switches from one command to another<br>Переключает с одной команды на другую|
 
 
 <a id="behavioral_command_turnoffcommand"></a>
@@ -49,7 +49,7 @@
 ##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-|public|<em><strong>execute</strong>(): void</em><br>|
+|public|<em><strong>execute</strong>(): void</em><br>Command execution<br>Выполнение команды|
 
 
 <a id="behavioral_command_turnoncommand"></a>
@@ -58,7 +58,7 @@
 ##### implements [Behavioral\Command\CommandInterface](#behavioral_command_commandinterface)
 | Visibility | Function |
 |:-----------|:---------|
-|public|<em><strong>execute</strong>(): void</em><br>|
+|public|<em><strong>execute</strong>(): void</em><br>Command execution<br>Выполнение команды|
 <hr>
 
 ###### created with [Rudra-Documentation-Collector](#https://github.com/Jagepard/Rudra-Documentation-Collector)

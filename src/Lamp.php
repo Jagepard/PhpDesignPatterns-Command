@@ -11,10 +11,22 @@ namespace Behavioral\Command;
 
 class Lamp implements DeviceInterface
 {
+    /**
+     * Command registry
+     * ----------------
+     * Реестр команд
+     *
+     * @var array
+     */
     private array $commands = [];
 
     /**
-     * @param string $commandName
+     * Executes a specific command from the registry
+     * ---------------------------------------------
+     * Исполняет определенную команду из реестра
+     *
+     * @param  string $commandName
+     * @return void
      */
     public function execute(string $commandName): void
     {
@@ -26,6 +38,10 @@ class Lamp implements DeviceInterface
     }
 
     /**
+     * Adds a command to the registry
+     * ------------------------------
+     * Добавляет команду в реестр
+     * 
      * @param string $commandName
      * @param CommandInterface $command
      */

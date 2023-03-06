@@ -13,6 +13,13 @@ class ToggleCommand implements CommandInterface
 {
     private int $toggle = 1;
 
+    /**
+     * Switches from one command to another
+     * -------------------------------------
+     * Переключает с одной команды на другую
+     *
+     * @return void
+     */
     public function execute(): void
     {
         $command = ($this->toggle % 2) ? new TurnOnCommand() : new TurnOffCommand();
