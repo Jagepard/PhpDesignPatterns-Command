@@ -35,21 +35,25 @@ class CommandTest extends PHPUnit_Framework_TestCase
         ob_start();
         $this->device->execute("on");
         $on = ob_get_clean();
-        $this->assertEquals($on, sprintf("The Light turns %s \n", "on"));
+        $this->assertEquals("💡 ON\n", $on);
+        $this->assertTrue($this->device->getLightStatus());
 
         ob_start();
         $this->device->execute("off");
         $off = ob_get_clean();
-        $this->assertEquals($off, sprintf("The Light turns %s \n", "off"));
+        $this->assertEquals("💡 OFF\n", $off);
+        $this->assertFalse($this->device->getLightStatus());
 
         ob_start();
         $this->device->execute("toggle");
         $toggle = ob_get_clean();
-        $this->assertEquals($toggle, sprintf("The Light turns %s \n", "on"));
+        $this->assertEquals("💡 ON\n", $toggle);
+        $this->assertTrue($this->device->getLightStatus());
 
         ob_start();
         $this->device->execute("toggle");
         $toggle = ob_get_clean();
-        $this->assertEquals($toggle, sprintf("The Light turns %s \n", "off"));
+        $this->assertEquals("💡 OFF\n", $toggle);
+        $this->assertFalse($this->device->getLightStatus());
     }
 }

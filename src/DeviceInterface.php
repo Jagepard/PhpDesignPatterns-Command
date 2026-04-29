@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
@@ -10,15 +12,15 @@ namespace Behavioral\Command;
 interface DeviceInterface
 {
     /**
-     * @param  string $commandName
-     * @return void
-     */
-    public function execute(string $commandName): void;
-
-    /**
-     * @param  string           $commandName
+     * @param  string           $name
      * @param  CommandInterface $command
      * @return void
      */
-    public function setCommand(string $commandName, CommandInterface $command): void;
+    public function setCommand(string $name, CommandInterface $command): void;
+
+    /**
+     * @param  string $name
+     * @return void
+     */
+    public function execute(string $name): void;
 }
