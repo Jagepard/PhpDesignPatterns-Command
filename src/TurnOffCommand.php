@@ -11,15 +11,19 @@ namespace Behavioral\Command;
 
 class TurnOffCommand implements CommandInterface
 {
-    /**
-     * Command execution
-     * ------------------
-     * Выполнение команды
-     *
-     * @return void
-     */
-    public function execute(): void
+    private function getMessage(): void
     {
-        print("The Light turns off \n");
+        echo "💡 OFF\n";
+    }
+
+    private function getStatus(): bool
+    {
+        return false;
+    }
+
+    public function execute(DeviceInterface $device): void
+    {
+        $this->getMessage();
+        $device->setLightStatus($this->getStatus());
     }
 }
